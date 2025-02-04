@@ -8,3 +8,5 @@ import "bootstrap"
 //= require jquery
 //= require rails-ujs
 //= require_tree .
+
+import "./posts/style";

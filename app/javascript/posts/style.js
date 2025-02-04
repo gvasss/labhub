@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function() {
                 $(this).addClass("border-color-mode");
                 $(this).css('border', '5px solid ' + randomColor());
             });
-        }    
+        }
     }
 
 
