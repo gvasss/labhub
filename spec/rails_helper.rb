@@ -21,6 +21,20 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include FactoryBot::Syntax::Methods
 
+  # Configure Capybara JavaScript driver to use Selenium with Chrome
+  Capybara.register_driver :selenium_chrome_headless do |app|
+    Capybara::Selenium::Driver.new(app,
+      browser: :chrome,
+      options: Selenium::WebDriver::Chrome::Options.new.tap do |options|
+        options.add_argument('--headless') # Run in headless mode
+        options.add_argument('--disable-gpu') # Disable GPU rendering
+        options.add_argument('--no-sandbox') # Avoid sandbox issues in CI
+        options.add_argument('--disable-dev-shm-usage') # Handle large files in /dev/shm
+        options.add_argument("--user-data-dir=/tmp/capybara_chrome_#{SecureRandom.hex(10)}") # Unique user data dir
+      end
+    )
+  end
+
   # Set JavaScript driver for Capybara
   Capybara.javascript_driver = :selenium_chrome_headless
   Capybara.server = :puma

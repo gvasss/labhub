@@ -8,7 +8,7 @@ gem "sassc-rails"
 gem 'devise'
 gem 'jquery-rails'
 
-gem 'rspec-rails', '~> 6.0'
+gem 'rspec-rails', '~> 7.0'
 gem 'factory_bot_rails'
 gem 'rails-controller-testing'
 gem 'headless'
