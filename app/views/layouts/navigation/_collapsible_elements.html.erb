@@ -1,25 +1,3 @@
 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <% if user_signed_in? %>
-
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-            <a id="user-settings" class="nav-link" href="#">
-            <span id="user-name"><%= current_user.name %></span>
-            </a>
-        </li>
-        </ul>
-        <form class="">
-        <%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-light me-2' %>
-        <%= link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-light' %>
-        </form>
-
-    <% else # user not signed it %>
-
-        <form class="d-flex ms-auto">
-        <%= link_to 'Login', login_path, class: 'btn btn-light me-2' %>
-        <%= link_to 'Signup', signup_path, method: :delete, class: 'btn btn-light' %>
-        </form>
-
-    <% end # if user is signed it %>
-
+    <%= render collapsible_links_partial_path %>
 </div>
