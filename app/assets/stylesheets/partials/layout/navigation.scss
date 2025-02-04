@@ -1,0 +1,13 @@
+@import 'base/variables';
+
+.navbar-expand-lg.navbar-dark,
+.navbar-toggler:focus,
+.navbar-toggler.collapsed,
+button.navbar-toggler {
+  background: $navbarColor !important;
+  border: none;
+
+  a {
+    color: white !important;
+  }
+}
