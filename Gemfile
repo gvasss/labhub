@@ -8,6 +8,13 @@ gem "sassc-rails"
 gem 'devise'
 gem 'jquery-rails'
 
+gem 'rspec-rails', '~> 6.0'
+gem 'factory_bot_rails'
+gem 'rails-controller-testing'
+gem 'headless'
+gem 'poltergeist'
+gem 'database_cleaner'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
 
