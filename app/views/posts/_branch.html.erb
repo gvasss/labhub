@@ -1,0 +1,23 @@
+<div id="branch-main-content" class="container">
+  <div class="row">
+    <h1 class="page-title"><%= page_title %></h1>
+    <%= render 'posts/branch/create_new_post', branch: branch %>
+  </div><!-- row -->
+ 
+  <div class="row">
+    <%= render 'posts/branch/categories', branch: branch %>
+  </div>
+ 
+  <div class="row">
+    <div class="col-sm-9" id="feed">
+      <div class="row row-cols-auto g-3">
+        <%= render partial: 'posts/post', collection: @posts, as: :post %>
+        <%= render no_posts_partial_path %>
+      </div>
+    </div>
+  </div><!-- row -->
+ 
+  <div class="infinite-scroll">
+    <%= will_paginate @posts %>
+  </div>
+</div><!-- container -->
