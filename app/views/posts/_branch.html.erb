@@ -19,7 +19,7 @@
     <div class="col-sm-9" id="feed">
       <div class="row row-cols-auto g-3">
         <%= render partial: 'posts/post', collection: @posts, as: :post %>
-        <%= render no_posts_partial_path %>
+        <%= render no_posts_partial_path(@posts) %>
       </div>
     </div>
   </div><!-- row -->
