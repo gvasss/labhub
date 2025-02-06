@@ -8,3 +8,6 @@ application.register("modal", ModalController);
 
 import StyleController from "./style_controller";
 application.register("style", StyleController);
+
+import InfiniteScrollController from "./infinite_scroll_controller"; 
+application.register("infinite-scroll", InfiniteScrollController);
