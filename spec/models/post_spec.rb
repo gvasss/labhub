@@ -20,5 +20,4 @@ RSpec.describe Post, type: :model do
       expect(Post.all).to eq [second_post, first_post]
     end
   end
-  
 end
