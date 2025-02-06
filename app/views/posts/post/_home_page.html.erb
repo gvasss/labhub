@@ -1,0 +1,17 @@
+<div data-controller="style">
+  <div class="col-sm-3 single-post-card" data-style-target="post" data-id="<%= post.id %>">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="post-text">
+          <%= truncate(post.title, length: 60) %>
+        </h4>
+        <div class="post-content">
+          <div class="posted-by">Posted by <%= post.user.name %></div>
+          <h3><%= post.title %></h3>
+          <p><%= post.content %></p>
+          <div class="interested"><a href="#" class="btn btn-primary">I'm interested</a></div>
+        </div>
+      </div>
+    </div><!-- card -->
+  </div><!-- col-sm-3 -->
+</div>
