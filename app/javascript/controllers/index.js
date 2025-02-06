@@ -2,3 +2,9 @@
 import { application } from "controllers/application"
 import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
 eagerLoadControllersFrom("controllers", application)
+
+import ModalController from "./modal_controller";
+application.register("modal", ModalController);
+
+import StyleController from "./style_controller";
+application.register("style", StyleController);

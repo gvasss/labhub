@@ -1,15 +1,17 @@
-<div class="col-sm-3 single-post-card" id=<%= post_path(post.id) %> style="background-color: <%= ['#45CCFF', '#49E83E', '#FFD432', '#E84B30', '#B243FF', '#FF6138', '#FFFF9D', '#BEEB9F', '#79BD8F'].sample %>;">
-  <div class="card">
-    <div class="card-block">
-      <h4 class="post-text">
-        <%= truncate(post.title, length: 60) %>
-      </h4>
-      <div class="post-content">
-        <div class="posted-by">Posted by <%= post.user.name %></div>
-        <h3><%= post.title %></h3> 
-        <p><%= post.content %></p>
-        <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
+<div data-controller="style">
+  <div class="col-sm-3 single-post-card" data-style-target="post">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="post-text">
+          <%= truncate(post.title, length: 60) %>
+        </h4>
+        <div class="post-content">
+          <div class="posted-by">Posted by <%= post.user.name %></div>
+          <h3><%= post.title %></h3>
+          <p><%= post.content %></p>
+          <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
+        </div>
       </div>
-    </div>
-  </div><!-- card -->
-</div><!-- col-sm-3 -->
+    </div><!-- card -->
+  </div><!-- col-sm-3 -->
+</div>
