@@ -4,7 +4,6 @@ ruby "3.4.1"
 
 gem "bootstrap"
 gem "sassc-rails"
-
 gem 'devise'
 gem 'jquery-rails'
 
@@ -14,6 +13,8 @@ gem 'rails-controller-testing'
 gem 'headless'
 gem 'poltergeist'
 gem 'database_cleaner'
+
+gem 'turbolinks', '~> 5'
 
 gem 'faker'
 

@@ -10,3 +10,5 @@ import "bootstrap"
 //= require_tree .
 
 import "./posts/style";
+
+//= require toggle_window
