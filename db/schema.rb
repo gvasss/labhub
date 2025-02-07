@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_04_172517) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_06_201006) do
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "branch"
@@ -27,6 +27,27 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_04_172517) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "private_conversations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.integer "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id", "sender_id"], name: "index_private_conversations_on_recipient_id_and_sender_id", unique: true
+    t.index ["recipient_id"], name: "index_private_conversations_on_recipient_id"
+    t.index ["sender_id"], name: "index_private_conversations_on_sender_id"
+  end
+
+  create_table "private_messages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id"
+    t.bigint "conversation_id"
+    t.boolean "seen", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_private_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_private_messages_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
@@ -40,4 +61,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_04_172517) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "private_messages", "users"
 end
