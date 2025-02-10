@@ -1,9 +1,5 @@
 # LabHub - Laboratory Management System
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
-![GitHub issues](https://img.shields.io/github/issues/your-repo/labhub)
-![GitHub stars](https://img.shields.io/github/stars/your-repo/labhub)
-
 LabHub is a comprehensive laboratory management system built with Ruby on Rails. It allows users to manage laboratory resources, track experiments, and organize research data efficiently.
 
 ## Table of Contents
